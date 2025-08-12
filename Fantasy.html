@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fantasy Football Live</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f8f8f8; color: #222; margin: 0; }
+    header { background-color: #111; color: white; padding: 1rem; text-align: center; }
+    .player-card { background: white; border-radius: 10px; padding: 1rem; margin: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    h2 { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fantasy Football Live</h1>
+    <p>Live player stats, projections, and injury reports</p>
+  </header>
+  <div id="players"></div>
+  <script>
+    // Simulated player data (this can be swapped with real API later)
+    const players = [
+      { name: "Patrick Mahomes", team: "KC", points: 25.3, status: "Active" },
+      { name: "Justin Jefferson", team: "MIN", points: 19.8, status: "Questionable" },
+      { name: "Christian McCaffrey", team: "SF", points: 21.1, status: "Active" }
+    ];
+
+    const container = document.getElementById("players");
+    players.forEach(p => {
+      container.innerHTML += `
+        <div class="player-card">
+          <h2>${p.name} (${p.team})</h2>
+          <p>Points: ${p.points}</p>
+          <p>Status: ${p.status}</p>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
